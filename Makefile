@@ -78,6 +78,10 @@ shell-no-deps: compile-no-deps
 	clear
 	@ERL_LIBS=$(ERL_LIBS) $(LFE) -pa $(TEST_OUT_DIR)
 
+mnesia-shell: compile-no-deps
+	clear
+	ERL_LIBS=$(ERL_LIBS) $(LFE) -pa $(TEST_OUT_DIR) -mnesia dir '"$(DB)"'
+
 clean: clean-ebin clean-eunit
 	rebar clean
 
