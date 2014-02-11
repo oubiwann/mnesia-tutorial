@@ -1,11 +1,11 @@
-########
-mnesia-tutorial
-########
+###################
+LFE Mnesia Tutorial
+###################
 
 Introduction
 ============
 
-Add content to me here!
+This repo holds the source code for the LFE Mnesia Tutorial available `here`_.
 
 Dependencies
 ------------
@@ -31,6 +31,7 @@ Add content to me here!
 
 .. Links
 .. -----
+.. _here: http://lfe.github.io/tutorials/mnesia/1.html
 .. _rebar: https://github.com/rebar/rebar
 .. _LFE: https://github.com/rvirding/lfe
 .. _lfeunit: https://github.com/lfe/lfeunit
