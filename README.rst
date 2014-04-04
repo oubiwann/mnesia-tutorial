@@ -2,10 +2,12 @@
 LFE Mnesia Tutorial
 ###################
 
+
 Introduction
 ============
 
 This repo holds the source code for the LFE Mnesia Tutorial available `here`_.
+
 
 Dependencies
 ------------
@@ -19,15 +21,31 @@ directory of this project when you run ``make deps``:
 * `LFE`_ (Lisp Flavored Erlang; needed only to compile)
 * `lfeunit`_ (needed only to run the unit tests)
 
-Installation
+
+Download
+========
+
+Get the code from github and compile it:
+
+.. code:: shell
+
+    $ git clone git@github.com:oubiwann/mnesia-tutorial.git
+    $ cd mnesia-tutorial
+    $ make get-deps
+    $ make compile
+
+
+Walk-Through
 ============
 
-Add content to me here!
+.. code:: cl
 
-Usage
-=====
-
-Add content to me here!
+> (mnesia:create_schema (list (node)))
+ok
+> (mnesia:start)
+ok
+> (mnesia:create_table 'employee `(#(attributes ,(fields-employee))))
+#(atomic ok)
 
 .. Links
 .. -----
