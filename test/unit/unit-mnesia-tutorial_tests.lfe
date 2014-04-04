@@ -1,4 +1,4 @@
-(defmodule mnesia-tutorial_tests
+(defmodule unit-mnesia-tutorial_tests
   (export all)
   (import
     (from lfeunit-util
@@ -9,4 +9,4 @@
 
 
 (deftest my-adder
-  (is-equal 4 (: mnesia-tutorial my-adder 2 2)))
+  (is-equal 4 (mnesia-tutorial:my-adder 2 2)))
