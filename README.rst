@@ -44,8 +44,13 @@ Walk-Through
 ok
 > (mnesia:start)
 ok
-> (mnesia:create_table 'employee `(#(attributes ,(fields-employee))))
-#(atomic ok)
+> (slurp '"src/structure.lfe")
+#(ok structure)
+> (create-set-tables)
+(#(atomic ok) #(atomic ok) #(atomic ok) #(atomic ok))
+> (create-bag-tables)
+(#(atomic ok) #(atomic ok))
+
 
 .. Links
 .. -----
