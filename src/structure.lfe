@@ -2,33 +2,43 @@
   (export all))
 
 (include-lib "stdlib/include/qlc.hrl")
-(include-lib "deps/lfe-utils/include/utils-macros.lfe")
 (include-lib "include/tables.lfe")
+(include-lib "include/macros.lfe")
 
+; XXX once we can call macros in a map function, we'll uncomment these and
+; use them
+;
+; (defun set-table-names ()
+;   (list 'employee
+;         'department
+;         'project
+;         'manager))
+;
+; (defun bag-table-names ()
+;   (list 'in-department
+;         'in-project))
 
-(defun table-names ()
-  (list 'employee
-        'department
-        'project
-        'manager))
+(defun create-set-tables ()
+  ; XXX hopefully, the following will work soon!
+  ;
+  ; (lists:map
+  ;   (lambda (x) (funcall (eval (macro-function 'create-tables $ENV) x)))
+  ;   (set-table-names)))
+  ; XXX until then, manual calls:
+  (list
+    (create-table employee ())
+    (create-table department ())
+    (create-table project ())
+    (create-table manager ())))
 
-(defun bag-table-names ()
-  (list 'in-department
-        'in-project))
-
-(defun create-table (table-name)
-  (let ((attrs `(#(attributes
-                 (records-,table-name)))))
-    (mnesia:create_table table-name attrs)))
-
-; (defun create-bag-table (table-name)
-;   (let ((meta-data (list
-;                      (tuple 'type 'bag)
-;                      (tuple 'attributes
-;                             (record-info table-name)))))
-;    (: mnesia create_table table-name meta-data)))
-
-; (defun init ()
-;   (: lists map #'create-table/1 (table-names))
-;   (: lists map #'create-bag-table/1 (bag-table-names)))
+(defun create-bag-tables ()
+  ; XXX hopefully, the following will work soon!
+  ;
+  ; (lists:map
+  ;   (lambda (x) (funcall (eval (macro-function 'create-tables $ENV) x)))
+  ;   (set-table-names)))
+  ; XXX until then, manual calls:
+  (list
+    (create-table in-department (#(type bag)))
+    (create-table in-project (#(type bag)))))
 
