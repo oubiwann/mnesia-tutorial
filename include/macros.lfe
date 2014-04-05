@@ -1,3 +1,4 @@
+;; XXX I'm thinking this might want to go in lfe-utils
 (defmacro create-table
   "To use this macro, pass a 'raw' atom for the table name, not a quoted one --
   just like you would do when placing an atom in tuple data: #(...).
