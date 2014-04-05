@@ -42,3 +42,7 @@
     (create-table in-department (#(type bag)))
     (create-table in-project (#(type bag)))))
 
+(defun init ()
+  (list
+    (tuple 'create-set-tables (create-set-tables))
+    (tuple 'create-bag-tables (create-bag-tables))))
