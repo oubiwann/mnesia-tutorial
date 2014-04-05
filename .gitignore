@@ -6,3 +6,5 @@ deps
 debug-*
 ebin/*
 bin/expm
+.rebar/*
+Company.DB/*
