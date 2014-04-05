@@ -38,19 +38,24 @@ Get the code from github and compile it:
 Walk-Through
 ============
 
+Start the REPL:
+
+.. code:: bash
+
+    $ DB=./Company.DB make mnesia-shell
+
 .. code:: cl
 
-> (mnesia:create_schema (list (node)))
-ok
-> (mnesia:start)
-ok
-> (slurp '"src/structure.lfe")
-#(ok structure)
-> (create-set-tables)
-(#(atomic ok) #(atomic ok) #(atomic ok) #(atomic ok))
-> (create-bag-tables)
-(#(atomic ok) #(atomic ok))
-
+    > (mnesia:create_schema (list (node)))
+    ok
+    > (mnesia:start)
+    ok
+    > (slurp '"src/structure.lfe")
+    #(ok structure)
+    > (init)
+    (#(create-set-tables (#(atomic ok) #(atomic ok) #(atomic ok) #(atomic ok)))
+     #(create-bag-tables (#(atomic ok) #(atomic ok))))
+    >
 
 .. Links
 .. -----
