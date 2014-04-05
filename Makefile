@@ -57,6 +57,12 @@ shell-no-deps: compile-no-deps
 	@echo "Starting shell ..."
 	@PATH=$(SCRIPT_PATH) lfetool repl
 
+mnesia-shell: compile-no-deps
+	clear
+	@ERL_LIBS=$(shell lfetool info erllib) \
+	PATH=$(SCRIPT_PATH) \
+	lfe -pa $(TEST_OUT_DIR) -mnesia dir '"$(DB)"'
+
 clean: clean-ebin clean-eunit
 	@rebar clean
 
