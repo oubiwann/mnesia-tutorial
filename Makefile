@@ -26,8 +26,8 @@ $(EXPM): $(BIN_DIR)
 
 get-deps:
 	@echo "Getting dependencies ..."
-	@rebar get-deps
-	@PATH=$(SCRIPT_PATH) lfetool update deps
+	@rebar get-deps >> install.log 2>&1
+	@PATH=$(SCRIPT_PATH) lfetool update deps >> install.log 2>&1
 
 clean-ebin:
 	@echo "Cleaning ebin dir ..."
