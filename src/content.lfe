@@ -66,3 +66,10 @@
                       room-number rm)))
       (insert-employee employee dep projs)
       (insert-employees tail))))
+
+(defun insert-manager (employee-id department-id)
+  (mnesia:transaction
+    (lambda ()
+      (mnesia:write
+        (make-manager employee-id employee-id
+                      department-id department-id)))))

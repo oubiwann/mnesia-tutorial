@@ -29,7 +29,7 @@
     (create-table employee ())
     (create-table department ())
     (create-table project ())
-    (create-table manager ())))
+    (create-table in-department ())))
 
 (defun create-bag-tables ()
   ; XXX hopefully, the following will work soon!
@@ -39,7 +39,7 @@
   ;   (set-table-names)))
   ; XXX until then, manual calls:
   (list
-    (create-table in-department (#(type bag)))
+    (create-table manager (#(type bag)))
     (create-table in-project (#(type bag)))))
 
 (defun get-status (list-of-tuples)
