@@ -23,7 +23,7 @@
      (mnesia:transaction (lambda () (mnesia:write project)))
      (insert-projects tail))))
 
-(defun insert-employee(employee department-id project-names)
+(defun insert-employee (employee department-id project-names)
   "A utility function for populating the employee table and updating all the
   associated relationships."
   (mnesia:transaction
@@ -51,3 +51,18 @@
                         project-name project-name)))
       (mnesia:write in-project)
       (insert-project-relations employee-id tail))))
+
+(defun insert-employees
+  "Batch 'em up."
+  (('())
+    'ok)
+  (((cons (list id nm sal gen ph rm dep projs) tail))
+    (let ((employee (make-employee
+                      id id
+                      name nm
+                      salary sal
+                      gender gen
+                      phone ph
+                      room-number rm)))
+      (insert-employee employee dep projs)
+      (insert-employees tail))))
