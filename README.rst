@@ -57,6 +57,13 @@ Start the REPL:
      #(create-bag-tables (#(atomic ok) #(atomic ok))))
     >
 
+Actually, I take it back -- no walk-through.
+
+Go read the tutorial!
+
+* http://lfe.github.io/tutorials/mnesia/1.html
+
+
 .. Links
 .. -----
 .. _here: http://lfe.github.io/tutorials/mnesia/1.html
