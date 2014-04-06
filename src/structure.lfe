@@ -1,7 +1,6 @@
 (defmodule structure
   (export all))
 
-(include-lib "stdlib/include/qlc.hrl")
 (include-lib "include/tables.lfe")
 (include-lib "include/macros.lfe")
 

@@ -1,9 +1,7 @@
 (defmodule content
   (export all))
 
-(include-lib "stdlib/include/qlc.hrl")
 (include-lib "include/tables.lfe")
-
 
 (defun insert-departments
   "A utility function for populating the department table."
