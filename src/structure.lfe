@@ -2,7 +2,7 @@
   (export all))
 
 (include-lib "include/tables.lfe")
-(include-lib "include/macros.lfe")
+(include-lib "deps/lfe-utils/include/mnesia-macros.lfe")
 
 ; XXX once we can call macros in a map function, we'll uncomment these and
 ; use them
