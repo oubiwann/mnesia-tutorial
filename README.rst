@@ -61,7 +61,7 @@ Actually, I take it back -- no walk-through.
 
 Go read the tutorial!
 
-* http://lfe.github.io/tutorials/mnesia/1.html
+* http://docs.lfe.io/tutorials/mnesia/1.html
 
 
 .. Links
